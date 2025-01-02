@@ -1,0 +1,109 @@
+// Colors
+$LightCyan: hsl(193, 38%, 86%);
+$NeonGreen: hsl(150, 100%, 66%);
+$GrayishBlue: hsl(217, 19%, 38%);
+$DarkGrayishBlue: hsl(217, 19%, 24%);
+$DarkBlue: hsl(218, 23%, 16%);
+// Font
+$fs: 28px;
+$fw: 800;
+$ff: "Manrope", serif;
+
+* > *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: $fs;
+  font-weight: $fw;
+  font-family: $ff;
+}
+
+@mixin flex($dir, $jus, $ali, $gap) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jus;
+  align-items: $ali;
+  gap: $gap;
+}
+
+body {
+  min-height: 100vh;
+  @include flex(row, center, center, 0);
+  background-color: $DarkBlue;
+}
+.app-wrapper {
+  width: 500px;
+  max-width: 90%;
+  padding: 25px;
+  padding-bottom: 50px;
+  @include flex(column, center, center, 20px);
+  border-radius: 10px;
+  background-color: $DarkGrayishBlue;
+  position: relative;
+}
+
+.counter {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+  color: $NeonGreen;
+  letter-spacing: 2px;
+  .number {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+}
+
+.advice {
+  max-width: 100%;
+  text-align: center;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: $LightCyan;
+}
+
+.divider {
+  max-width: 100%;
+  margin-block: 0.6rem;
+}
+
+.btn {
+  $size: 60px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $size;
+  height: $size;
+  border: none;
+  border-radius: 50%;
+  @include flex(row, center, center, 0);
+  background-color: $NeonGreen;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 1px 1px 30px $NeonGreen;
+    filter: brightness(1.2);
+  }
+}
+
+.status-message {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: calc(100% + 100px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    to right,
+    green,
+    lightgreen,
+    green,
+    lightgreen,
+    green
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
