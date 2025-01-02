@@ -27,7 +27,7 @@ Thi is a simple application that fetches and displays random advice for users. T
 
 2. **Navigate to the Project Directory**
    ```bash
-   cd advice-generator
+   cd Advice-generator-app
    ```
 
 3. **Open the Application**
